@@ -1,13 +1,32 @@
 server:
-  port: 8761
+  port: 8000
 
-
-spring:
-  application:
-    name: discoveryservice
 
 
 eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+
+
+
+spring:
+  application:
+    name: springcloudeureka
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: first-service
+#          url: http://localhost:8081/
+#          predicates:
+#            - Path=/first-service/**
+#        - id: first-service
+#          url: http://localhost:8082/
+#          predicates:
+#            - Path=/first-service/**
+
+
+
